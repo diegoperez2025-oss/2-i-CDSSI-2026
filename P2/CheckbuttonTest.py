@@ -1,45 +1,40 @@
-from tkinter import *
+import tkinter as tk
 
-class CheckbuttonTest:
+class ButtonTest:
 
-    def draw_checkbutton(self):
-        root = Tk() 
-        root.title("CheckButton Demo")
-        root.geometry('500x400')
+    def button_clicked(self):
+        print("Button clicked!")
 
-        w = Label(root, text ='Welcome!!', font = "50") 
-        w.pack() 
+    def draw_button(self):
+        root = tk.Tk()
+        root.title("Button Demo")
+        # Creating a button with specified options
+        button = tk.Button(root, 
+                        text="Click Me", 
+                        command=self.button_clicked,
+                        activebackground="blue", 
+                        activeforeground="white",
+                        anchor="center",
+                        bd=3,
+                        bg="lightgray",
+                        cursor="hand2",
+                        disabledforeground="gray",
+                        fg="black",
+                        font=("Arial", 12),
+                        height=2,
+                        highlightbackground="black",
+                        highlightcolor="green",
+                        highlightthickness=2,
+                        justify="center",
+                        overrelief="raised",
+                        padx=10,
+                        pady=5,
+                        width=15,
+                        wraplength=100)
 
-        Checkbutton1 = IntVar() 
-        Checkbutton2 = IntVar() 
-        Checkbutton3 = IntVar() 
+        button.pack(padx=20, pady=20)
 
-        Button1 = Checkbutton(root, text = "Tutorial", 
-                            variable = Checkbutton1, 
-                            onvalue = 1, 
-                            offvalue = 0, 
-                            height = 2, 
-                            width = 10) 
+        root.mainloop()
 
-        Button2 = Checkbutton(root, text = "Student", 
-                            variable = Checkbutton2, 
-                            onvalue = 1, 
-                            offvalue = 0, 
-                            height = 2, 
-                            width = 10) 
-
-        Button3 = Checkbutton(root, text = "Courses", 
-                            variable = Checkbutton3, 
-                            onvalue = 1, 
-                            offvalue = 0, 
-                            height = 2, 
-                            width = 10) 
-            
-        Button1.pack() 
-        Button2.pack() 
-        Button3.pack() 
-
-        mainloop()
-
-test = CheckbuttonTest()
-test.draw_checkbutton()
+test = ButtonTest()
+test.draw_button()

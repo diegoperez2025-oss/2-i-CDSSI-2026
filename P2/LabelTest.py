@@ -1,17 +1,19 @@
+class FileManager:
+    def read_entire_file(self, path, mode):
+        with open(path, mode) as reader:
+            print(reader.read())
 
+    def get_file_lines(self, path, mode):
+        with open(path, mode) as reader:
+            return reader.readlines()
 
-import tkinter as tk
+    def read_line_by_line(self, path, mode):
+        with open(path, mode) as reader:
+            line = reader.readline()
+            while line != '':  
+                print(line, end='')
+                line = reader.readline()
 
-class LabelTest:
-
-    def draw_label(self):
-        root = tk.Tk()
-        root.title("Label Demo")
-        root.geometry('500x400')
-        lbl = tk.Label(root, text="Hello World")
-        lbl.pack()
-
-        root.mainloop()
-
-test = LabelTest()
-test.draw_label()
+    def write_text(self, path, text):
+        with open(path, 'w') as file:
+            file.write(text)

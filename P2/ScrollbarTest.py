@@ -1,33 +1,48 @@
-from tkinter import *
+from tkinter import * 
+from tkinter.ttk import * 
+from time import strftime
 
-class ScrollbarTest:
+class MenuTest:
 
-    def draw_scrollbar(self):
+    def draw_menu(self):
+        # creating tkinter window
         root = Tk()
-        root.title("Scrollbar Demo")
-        root.geometry("150x200")
-        
-        w = Label(root, text ='Welcome!!',
-                font = "50") 
+        root.title('Menu Demo')
 
-        w.pack()
-        
-        scroll_bar = Scrollbar(root)
+        # Creating Menubar
+        menubar = Menu(root)
 
-        scroll_bar.pack( side = RIGHT,
-                        fill = Y )
-        
-        mylist = Listbox(root, 
-                        yscrollcommand = scroll_bar.set )
-        
-        for line in range(1, 26):
-            mylist.insert(END, "Student " + str(line))
+        # Adding File Menu and commands
+        file = Menu(menubar, tearoff = 0)
+        menubar.add_cascade(label ='File', menu = file)
+        file.add_command(label ='New File', command = None)
+        file.add_command(label ='Open...', command = None)
+        file.add_command(label ='Save', command = None)
+        file.add_separator()
+        file.add_command(label ='Exit', command = root.destroy)
 
-        mylist.pack( side = LEFT, fill = BOTH )
+        # Adding Edit Menu and commands
+        edit = Menu(menubar, tearoff = 0)
+        menubar.add_cascade(label ='Edit', menu = edit)
+        edit.add_command(label ='Cut', command = None)
+        edit.add_command(label ='Copy', command = None)
+        edit.add_command(label ='Paste', command = None)
+        edit.add_command(label ='Select All', command = None)
+        edit.add_separator()
+        edit.add_command(label ='Find...', command = None)
+        edit.add_command(label ='Find again', command = None)
 
-        scroll_bar.config( command = mylist.yview )
-        
-        root.mainloop()
+        # Adding Help Menu
+        help_ = Menu(menubar, tearoff = 0)
+        menubar.add_cascade(label ='Help', menu = help_)
+        help_.add_command(label ='Tk Help', command = None)
+        help_.add_command(label ='Demo', command = None)
+        help_.add_separator()
+        help_.add_command(label ='About Tk', command = None)
 
-test = ScrollbarTest()
-test.draw_scrollbar()
+        # display Menu
+        root.config(menu = menubar)
+        mainloop()
+
+test = MenuTest()
+test.draw_menu()

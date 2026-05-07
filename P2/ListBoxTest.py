@@ -1,41 +1,20 @@
-from tkinter import *
+import tkinter as tk
 
-class ListBoxTest:
+class FrameTest:
 
-    def draw_listbox(self):
-        # create a root window.
-        top = Tk()
-        top.title("ListBox Demo")
-        # create listbox object
-        listbox = Listbox(top, height = 10, 
-                        width = 15, 
-                        bg = "white",
-                        activestyle = 'dotbox', 
-                        font = "Helvetica",
-                        fg = "green")
+    def draw_frame(self):
 
-        # Define the size of the window.
-        top.geometry("300x250")  
+        root = tk.Tk()
+        root.title("Frame Demo")
+        root.geometry('500x400')
 
-        # Define a label for the list.  
-        label = Label(top, text = " FOOD ITEMS") 
+        frame = tk.Frame(root, bg="lightblue", width=200, height=100, bd=3, relief=tk.RIDGE)
+        frame.pack(padx=20, pady=20)
 
-        # insert elements by their
-        # index and names.
-        listbox.insert(1, "Nachos")
-        listbox.insert(2, "Sandwich")
-        listbox.insert(3, "Burger")
-        listbox.insert(4, "Pizza")
-        listbox.insert(5, "Burrito")
+        label = tk.Label(frame, text="This is a Frame", bg="lightblue")
+        label.pack(pady=20)
 
-        # pack the widgets
-        label.pack()
-        listbox.pack()
+        root.mainloop()
 
-
-        # Display until User 
-        # exits themselves.
-        top.mainloop()
-
-test = ListBoxTest()
-test.draw_listbox()
+test = FrameTest()
+test.draw_frame()
