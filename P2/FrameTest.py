@@ -1,20 +1,60 @@
 import tkinter as tk
+from tkinter import filedialog as fd
+from tkinter import scrolledtext
 
-class FrameTest:
+class FileLoader:
+    
+    root = tk.Tk()
+    root.title("Text File Reader")
+    root.geometry("600x400")
 
-    def draw_frame(self):
+    text_area = tk.Text(root, height=2, width=4)
+    text_area.pack(padx=20, pady=20)
+    
+    def open_file(self):
+        """Open a text file and insert its content into the text widget."""
+        filetypes = (
+            ('Text files', '*.txt'),
+            ('Text files', '*.json'),
+            ('All files', '*.*')
+        )
 
-        root = tk.Tk()
-        root.title("Frame Demo")
-        root.geometry('500x400')
+        # Open a file dialog to select a single file and return an open file handle
+        file_handle = fd.askopenfile(
+            title='Open a file',
+            initialdir='/', # You can change the initial directory
+            filetypes=filetypes
+        )
 
-        frame = tk.Frame(root, bg="lightblue", width=200, height=100, bd=3, relief=tk.RIDGE)
-        frame.pack(padx=20, pady=20)
+        if file_handle:
+            # Read the file's content
+            content = file_handle.read()
+            print(content)
+            # Clear previous content in the Text widget
+            
+            
+            # Insert the content into the Text widget
+            self.text_area.insert(tk.END, content)
+            
+            # Close the file handle
+            file_handle.close()
 
-        label = tk.Label(frame, text="This is a Frame", bg="lightblue")
-        label.pack(pady=20)
+    def draw_app(self):
 
-        root.mainloop()
+        # Create a Button to open the file dialog
+        open_button = tk.Button(
+            self.root,
+            text='Open Text File',
+            command=self.open_file
+        )
+        open_button.pack(pady=10)
 
-test = FrameTest()
-test.draw_frame()
+        # Create a ScrolledText widget (includes built-in scrollbars)
+        self.text_area = scrolledtext.ScrolledText(self.root, wrap=tk.WORD, padx=1, pady=1)
+        self.text_area.pack(expand=True, fill='both')
+
+        # Run the Tkinter event loop
+        self.root.mainloop()
+
+test = FileLoader()
+test.draw_app()

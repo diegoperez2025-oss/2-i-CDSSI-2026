@@ -1,27 +1,354 @@
-import tkinter as tk
-from tkinter import ttk
-
-class TreeViewTest:
-
-    def draw_treeview(self):
-        root = tk.Tk()
-        root.title("Treeview App")
-        data = [("R1C1", "R1C2", "R1C3"), ("R2C1", "R2C2", "R2C3")]
-        columns = ("Column #1", "Column #2", "Column #3")
-
-        # Create Treeview
-        tree = ttk.Treeview(root, columns=columns, show="headings")
-        tree.pack(fill="both", expand=True)
-
-        # Set headings
-        for col in columns:
-            tree.heading(col, text=col)
-
-        # Insert data
-        for item in data:
-            tree.insert("", tk.END, values=item)
-
-        root.mainloop()
-
-test = TreeViewTest()
-test.draw_treeview()
+[
+    {
+        "id": 1,
+        "nombre": "david alejandro franco garcia",
+        "ocupacion": "Estudiante",
+        "contrasena": "david2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 5,
+        "calificacion": 1
+    },
+    {
+        "id": 2,
+        "nombre": "Julissa Espinosa Luna",
+        "ocupacion": "Estudiante",
+        "contrasena": "julissa2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 0,
+        "calificacion": 0
+    },
+    {
+        "id": 3,
+        "nombre": "sebastian ponce delgado",
+        "ocupacion": "Estudiante",
+        "contrasena": "sebastian2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 5,
+        "calificacion": 1
+    },
+    {
+        "id": 4,
+        "nombre": "maximo dante sandoval delgado",
+        "ocupacion": "Estudiante",
+        "contrasena": "maximo2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 6,
+        "calificacion": 3
+    },
+    {
+        "id": 5,
+        "nombre": "victoria ramirez martinez",
+        "ocupacion": "Estudiante",
+        "contrasena": "victoria2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 4,
+        "calificacion": 3
+    },
+    {
+        "id": 6,
+        "nombre": "Miguel Angel Corrales Iñiguez",
+        "ocupacion": "Estudiante",
+        "contrasena": "miguel2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 5,
+        "calificacion": 1
+    },
+    {
+        "id": 7,
+        "nombre": "Zoe Fernanda Garcia López",
+        "ocupacion": "Estudiante",
+        "contrasena": "zoe2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 4,
+        "calificacion": 2
+    },
+    {
+        "id": 8,
+        "nombre": "Joshua Asael Ramirez Cuellar",
+        "ocupacion": "Estudiante",
+        "contrasena": "joshua2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 3,
+        "calificacion": 6
+    },
+    {
+        "id": 9,
+        "nombre": "Luis Manuel Rodriguez Rodriguez",
+        "ocupacion": "Estudiante",
+        "contrasena": "luis2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 5,
+        "calificacion": 3
+    },
+    {
+        "id": 10,
+        "nombre": "Cesar Omar Enriquez Aguilar",
+        "ocupacion": "Estudiante",
+        "contrasena": "cesar2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 4,
+        "calificacion": 1
+    },
+    {
+        "id": 11,
+        "nombre": "Juan Diedo Vargas Villegas",
+        "ocupacion": "Estudiante",
+        "contrasena": "juan2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 4,
+        "calificacion": 2
+    },
+    {
+        "id": 12,
+        "nombre": "Yoel Rodriguez Valdenegro",
+        "ocupacion": "Estudiante",
+        "contrasena": "yoel2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 3,
+        "calificacion": 1
+    },
+    {
+        "id": 13,
+        "nombre": "alondra yanin martinez reygadas",
+        "ocupacion": "Estudiante",
+        "contrasena": "alondra2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 5,
+        "calificacion": 1
+    },
+    {
+        "id": 14,
+        "nombre": "yurem alejandro rodriguez sanchez",
+        "ocupacion": "Estudiante",
+        "contrasena": "yurem2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 6,
+        "calificacion": 5
+    },
+    {
+        "id": 15,
+        "nombre": "Rubén Luquin Sánchez",
+        "ocupacion": "Estudiante",
+        "contrasena": "ruben2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 7,
+        "calificacion": 6
+    },
+    {
+        "id": 16,
+        "nombre": "Angel Antonio Cazares Nuñez",
+        "ocupacion": "Estudiante",
+        "contrasena": "angel2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 4,
+        "calificacion": 1
+    },
+    {
+        "id": 17,
+        "nombre": "Meghan Lopez Peña",
+        "ocupacion": "Estudiante",
+        "contrasena": "meghan2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 10,
+        "calificacion": 10
+    },
+    {
+        "id": 18,
+        "nombre": "Dayana Ivonne Alcala Neri",
+        "ocupacion": "Estudiante",
+        "contrasena": "dayana2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 3,
+        "calificacion": 6
+    },
+    {
+        "id": 19,
+        "nombre": "angel geovanni sanchez de la cruz",
+        "ocupacion": "Estudiante",
+        "contrasena": "angel2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 6,
+        "calificacion": 1
+    },
+    {
+        "id": 20,
+        "nombre": "diego alfonso lopez rodriguez",
+        "ocupacion": "Estudiante",
+        "contrasena": "diego2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 6,
+        "calificacion": 1
+    },
+    {
+        "id": 21,
+        "nombre": "Miriam Daniela Barajas Marin",
+        "ocupacion": "Estudiante",
+        "contrasena": "miriam2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 4,
+        "calificacion": 1
+    },
+    {
+        "id": 22,
+        "nombre": "Diego Montiel Cabrera",
+        "ocupacion": "Estudiante",
+        "contrasena": "diego2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 6,
+        "calificacion": 3
+    },
+    {
+        "id": 23,
+        "nombre": "Gael Santiago Carrillo Castillo",
+        "ocupacion": "Estudiante",
+        "contrasena": "gael2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 1,
+        "calificacion": 8
+    },
+    {
+        "id": 24,
+        "nombre": "Dulce Anahi Alcala Neri",
+        "ocupacion": "Estudiante",
+        "contrasena": "dulce2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 5,
+        "calificacion": 2
+    },
+    {
+        "id": 25,
+        "nombre": "alexa xiadany martinez talavera",
+        "ocupacion": "Estudiante",
+        "contrasena": "alexa2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 4,
+        "calificacion": 1
+    },
+    {
+        "id": 26,
+        "nombre": "Diego Perez Melesio",
+        "ocupacion": "Estudiante",
+        "contrasena": "diego2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 5,
+        "calificacion": 9
+    },
+    {
+        "id": 27,
+        "nombre": "Eduardo Tadeo Valenzuela Villa",
+        "ocupacion": "Estudiante",
+        "contrasena": "eduardo2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 5,
+        "calificacion": 4
+    },
+    {
+        "id": 28,
+        "nombre": "Angel Santiago Coronel Hernández",
+        "ocupacion": "Estudiante",
+        "contrasena": "angel2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 5,
+        "calificacion": 4
+    },
+    {
+        "id": 29,
+        "nombre": "Emily Sandoval Madero",
+        "ocupacion": "Estudiante",
+        "contrasena": "emily2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 6,
+        "calificacion": 9
+    },
+    {
+        "id": 30,
+        "nombre": "OSCAR EDUARDO SANDOVAL VIZCAINO",
+        "ocupacion": "Estudiante",
+        "contrasena": "oscar2024",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 0,
+        "calificacion": 0
+    },
+    {
+        "id": 31,
+        "nombre": "jesus mateo reyes barron",
+        "ocupacion": "Estudiante",
+        "contrasena": "jesus2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 0,
+        "calificacion": 0
+    },
+    {
+        "id": 32,
+        "nombre": "carlos adrian murillo ramos",
+        "ocupacion": "Estudiante",
+        "contrasena": "carlos2025",
+        "grado": "2°",
+        "grupo": "I",
+        "turno": "Vespertino",
+        "examen": 0,
+        "calificacion": 0
+    }
+]
